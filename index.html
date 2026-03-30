@@ -1,137 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #f8f5f0;
-    }
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-    header {
-      text-align: center;
-      padding: 40px;
-      background: #020617;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 36px;
-    }
+body {
+  background: #0f172a;
+  color: #fff;
+  scroll-behavior: smooth;
+}
 
-    header p {
-      color: #c8a96a;
-    }
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  position: sticky;
+  top: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+}
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 10px;
-      background: #020617;
-    }
+nav h2 {
+  color: #c8a96a;
+}
 
-    nav a {
-      color: #f8f5f0;
-      text-decoration: none;
-    }
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+}
 
-    section {
-      padding: 50px;
-      text-align: center;
-    }
+/* HERO */
+.hero {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+.hero h1 {
+  font-size: 50px;
+}
 
-    .card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 10px;
-    }
+.hero span {
+  color: #c8a96a;
+}
 
-    .card img {
-      width: 100%;
-      border-radius: 10px;
-    }
+.hero p {
+  margin: 10px 0;
+  opacity: 0.7;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #020617;
-    }
+.hero button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #c8a96a;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
 
-    button {
-      padding: 10px 20px;
-      background: #c8a96a;
-      border: none;
-      cursor: pointer;
-    }
-  </style>
+/* SECTION */
+section {
+  padding: 80px 50px;
+  text-align: center;
+}
+
+/* PROJECT GRID */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* CONTACT */
+.contact button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #c8a96a;
+  border: none;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #020617;
+}
+
+/* ANIMATION */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 1s;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h1>Your Name</h1>
-    <p>Graphic Designer | UI/UX | Branding</p>
-  </header>
-
-  <!-- NAVBAR -->
-  <nav>
+<!-- NAV -->
+<nav>
+  <h2>MyPortfolio</h2>
+  <div>
     <a href="#about">About</a>
     <a href="#work">Work</a>
     <a href="#contact">Contact</a>
-  </nav>
+  </div>
+</nav>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I am a creative graphic designer passionate about branding, UI design, and visual storytelling. I create modern and impactful designs.</p>
-  </section>
+<!-- HERO -->
+<div class="hero">
+  <h1>Hi, I'm <span>Your Name</span></h1>
+  <p>Graphic Designer | UI/UX | Branding</p>
+  <button onclick="scrollToWork()">View My Work</button>
+</div>
 
-  <!-- WORK -->
-  <section id="work">
-    <h2>My Work</h2>
+<!-- ABOUT -->
+<section id="about" class="fade">
+  <h2>About Me</h2>
+  <p>I design modern, clean and impactful visuals. Passionate about branding, UI design and creative storytelling.</p>
+</section>
 
-    <div class="projects">
-      <div class="card">
-        <img src="https://via.placeholder.com/300" alt="">
-        <h3>Brand Design</h3>
-      </div>
-
-      <div class="card">
-        <img src="https://via.placeholder.com/300" alt="">
-        <h3>UI Design</h3>
-      </div>
-
-      <div class="card">
-        <img src="https://via.placeholder.com/300" alt="">
-        <h3>Social Media</h3>
-      </div>
+<!-- WORK -->
+<section id="work" class="fade">
+  <h2>My Work</h2>
+  <div class="projects">
+    
+    <div class="card">
+      <img src="https://via.placeholder.com/300">
+      <h3>Branding Design</h3>
     </div>
-  </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Email: yourmail@gmail.com</p>
-    <button>Hire Me</button>
-  </section>
+    <div class="card">
+      <img src="https://via.placeholder.com/300">
+      <h3>UI/UX Design</h3>
+    </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 Your Name</p>
-  </footer>
+    <div class="card">
+      <img src="https://via.placeholder.com/300">
+      <h3>Social Media</h3>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="fade contact">
+  <h2>Contact Me</h2>
+  <p>Email: yourmail@gmail.com</p>
+  <button>Hire Me</button>
+</section>
+
+<footer>
+  <p>© 2026 Your Name</p>
+</footer>
+
+<script>
+// Scroll button
+function scrollToWork() {
+  document.getElementById("work").scrollIntoView();
+}
+
+// Fade animation on scroll
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  faders.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      el.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
